@@ -22,8 +22,9 @@
     <div class="icons">
         <div class="fas fa-user" id="login-btn"></div>
     </div>
--->
+
 </header>
+-->
 
 <section class="home" id="home">
 
@@ -35,60 +36,75 @@
 
 </section>
 
-<section class="reserve" id="reserve">
+
+<section class="sala" id="sala">
 
     <h1 class="heading"> la nostra <span>sala</span> </h1>
 
-    <div class="box-container">
+        <div class="table-container">
+            <div class="table">
+                <img src="images/TABLE2.png" alt="">
+                <h3>Tavolo piccolo n.1</h3>
+                <p> min 1 max 3 pers.</p>
+                <a href="#" class="btn" id="form-btn1">prenota</a>
+            </div>
+            <div class="table">
+                <img src="images/TABLE6.png" alt="">
+                <h3>Tavolo grande n.2 </h3>
+                <p>min 5 max 8 pers.</p>
+                <a href="#" class="btn" id="form-btn2">prenota</a>
+            </div>
+            <div class="table">
+                <img src="images/TABLE4.png" alt="">
+                <h3>Tavolo medio n.3</h3>
+                <p>min 3 max 5 pers</p>
+                <a href="#" class="btn" id="form-btn3">prenota</a>
+            </div>
+            <div class="table">
+                <img src="images/TABLE4.png" alt="">
+                <h3>Tavolo medio n.4</h3>
+                <p>min 3 max 5 pers.</p>
+                <a href="#" class="btn" id="form-btn4">prenota</a>
+            </div>
+            <div class="table">
+                <img src="images/TABLE2.png" alt="">
+                <h3>Tavolo piccolo n.5</h3>
+                <p>Lmin 1 max 3 pers.</p>
+                <a href="#" class="btn" id="form-btn5">prenota</a>
+            </div>
+            <div class="table">
+                <img src="images/TABLE6.png" alt="">
+                <h3>Tavolo grande n.6</h3>
+                <p>min 5 max 8 pers.</p>
+                <a href="#" class="btn" id="form-btn6">prenota</a>
+            </div>
 
-        <div class="box">
-            <img src="images/TABLE2.png" alt="">
-            <h3>tavolo piccolo</h3>
-            <p> min 1 max 3 pers.</p>
-            <a href="#" class="btn">prenota</a>
         </div>
-
-        <div class="box">
-            <img src="images/TABLE6.png" alt="">
-            <h3>tavolo grande</h3>
-            <p>min 5 max 8 pers.</p>
-            <a href="#" class="btn">prenota</a>
-        </div>
-
-        <div class="box">
-            <img src="images/TABLE4.png" alt="">
-            <h3>tavolo medio</h3>
-            <p>min 3 max 5 pers</p>
-            <a href="#" class="btn">prenota</a>
-        </div>
-
-        <div class="box">
-            <img src="images/TABLE4.png" alt="">
-            <h3>tavolo medio</h3>
-            <p>min 3 max 5 pers.</p>
-            <a href="#" class="btn">prenota</a>
-        </div>
-
-        <div class="box">
-            <img src="images/TABLE2.png" alt="">
-            <h3>tavolo piccolo</h3>
-            <p>Lmin 1 max 3 pers.</p>
-            <a href="#" class="btn">prenota</a>
-        </div>
-
-        <div class="box">
-            <img src="images/TABLE6.png" alt="">
-            <h3>tavolo grande</h3>
-            <p>min 5 max 8 pers.</p>
-            <a href="#" class="btn">prenota</a>
-        </div>
-
-
-    </div>
 
 </section>
 
-<script src="script.js"></script>
+<!-- FORM DI PRENOTAZIONE -->
+<div class="reserve-form-container">
 
-</body>
-</html>
+    <span class="fas fa-times" id="close-reserve-form"></span>
+
+    <form action="">
+        <h3>FORM DI PRENOTAZIONE!</h3>
+        <input type="text" name="Nome"  class="input" placeholder="Nome" required>
+        <input type="text" name="Cognome"  class="input" placeholder="Cognome" required>
+        <input type="number" name="Persone"  class="input" placeholder="N° Persone" required>
+        <input type="number" name="Cell"  class="input" placeholder="Cell" required>
+        <input type="email" name="Email"  class="input" placeholder="Email" required>
+        <input type="number" name="Tavolo"  class="input" placeholder="N° Tavolo scelto" required>
+        <input type="date" name="Data"  class="input" placeholder="Data prenotazione" required>
+        <input type="numer" name="Orario"  class="input" placeholder="Orario prenotazione" required>
+        <input type="file" name="Documento" class="btn" value="Allega Dodcumento">
+        <input type="submit" id="prenota" class="btn" value="Prenota"></input>
+        <p>Riceverà via mail la disponibilità del tavolo con la conferma della prenotazione!</p>
+    </form>
+</div>
+
+<script src="script.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    </body>
+            </html>

@@ -31,6 +31,22 @@ html{
 body{
     background:#eee;
 }
+.btn{
+    margin-top: 1rem;
+    display: inline-block;
+    padding:.4rem 1rem;
+    font-size: 1.7rem;
+    border-radius: .5rem;
+    border:.2rem solid var(--black);
+    color:var(--black);
+    cursor: pointer;
+    background: none;
+}
+
+.btn:hover{
+    background: var(--orange);
+    color:#fff;
+}
 
 section{
     padding:2rem 9%;
@@ -146,7 +162,7 @@ section{
     clip-path: polygon(100% 0, 93% 50%, 100% 99%, 0% 100%, 7% 50%, 0% 0%);
 }
 
-.reserve .box-container{
+.sala .table-container{
     display: grid;
     background: #fff;
     box-shadow: var(--box-shadow);
@@ -154,47 +170,88 @@ section{
     gap:1.5rem;
 }
 
- .reserve .box-container .box{
+ .sala .table-container .table{
      text-align: center;
      padding: 1rem;
  }
 
-.reserve .box-container .box:hover{
+.sala .table-container .table:hover{
     outline: var(--outline-hover);
     outline-offset: 0rem;
 }
 
-.reserve .box-container .box img{
+.sala .table-container .table img{
     margin:1rem 0;
     height: 12rem;
 }
 
-.reserve .box-container .box h3{
+.sala .table-container .table h3{
     font-size: 2rem;
     line-height: 1.8;
     color:var(--black);
 }
 
-.reserve .box-container .box p{
+.sala .table-container .table p{
     font-size: 1rem;
     line-height: 1.8;
     color:var(--light-color);
     padding:1rem 0;
 }
-
-.btn{
-    margin-top: 1rem;
-    display: inline-block;
-    padding:.4rem 1rem;
-    font-size: 1.7rem;
-    border-radius: .5rem;
-    border:.2rem solid var(--black);
-    color:var(--black);
-    cursor: pointer;
-    background: none;
+.reserve-form-container{
+    position: fixed;
+    top:105%; left:0;
+    z-index: 10000;;
+    height:100%;
+    width:100%;
+    background:rgba(255,255,255,.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
 }
 
-.btn:hover{
-    background: var(--orange);
-    color:#fff;
+.reserve-form-container.active{
+    top:0;
+    opacity: 1;
+}
+
+.reserve-form-container form{
+    padding:2rem;
+    margin:2rem;
+    border-radius: .5rem;
+    box-shadow: var(--box-shadow);
+    background: #fff;
+    border:var(--border);
+    text-align: left;
+    width:60rem;
+    display: grid;
+    grid-gap: 2rem;
+}
+.reserve-form-container form .btn-prenota{
+    display: block;
+    width:100%;
+    margin:.5rem 0;
+}
+
+.reserve-form-container form h3{
+    text-align: center;
+    font-size: 4rem;
+    text-transform: uppercase;
+    color: var(--black)
+}
+.reserve-form-container form p{
+    text-decoration: underline;
+    font-size: 1.5rem;
+}
+.reserve-form-container form .btn-prenota{
+    display: block;
+    width:100%;
+    margin:.5rem 0;
+}
+.reserve-form-container #close-reserve-form{
+    position: absolute;
+    top:1.5rem; right:2.5rem;
+    font-size: 5rem;
+    color:var(--black);
+    cursor: pointer;
 }
