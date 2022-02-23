@@ -7,10 +7,6 @@ window.onload = () => { 'use strict';
                 console.log('ServiceWorker registration failed: ', err); });
     } }
 
-
-
-
-
 function display_form(){
     document.querySelector('.reserve-form-container').classList.toggle('active');
 }
