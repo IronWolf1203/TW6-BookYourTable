@@ -106,7 +106,7 @@ section{
     display: flex;
     align-items: center;
     justify-content: center;
-    background: url(images/home.jpg) no-repeat;
+    background: url(../images/home.jpg) no-repeat;
     background-position: center;
     background-size: cover;
     padding-top: 17rem;
@@ -199,7 +199,7 @@ section{
 }
 .reserve-form-container{
     position: fixed;
-    top:105%; left:0;
+    top:-105%; left: 0;
     z-index: 10000;;
     height:100%;
     width:100%;
