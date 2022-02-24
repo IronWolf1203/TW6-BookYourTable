@@ -1,3 +1,4 @@
+
 window.onload = () => { 'use strict';
     if ('serviceWorker' in navigator) { navigator.serviceWorker
         .register('./sw.js').then(function (registration) {
@@ -7,7 +8,15 @@ window.onload = () => { 'use strict';
                 console.log('ServiceWorker registration failed: ', err); });
     } }
 
-function display_form(){
+function test() {
+    console.log("test")
+}
+
+function display_form(table_size,table_num){
+    console.log('tableValue: '+table_size+" n:"+table_num)
+    let valueTable=document.getElementById("value_table")
+    valueTable.innerText="Tavolo N "+table_num+" "+table_size
+
     document.querySelector('.reserve-form-container').classList.toggle('active');
 }
 
