@@ -240,14 +240,11 @@ section{
     color: var(--black)
 }
 .reserve-form-container form p{
+    text-align: center;
     text-decoration: underline;
     font-size: 1.5rem;
 }
-.reserve-form-container form .btn-prenota{
-    display: block;
-    width:100%;
-    margin:.5rem 0;
-}
+
 .reserve-form-container #close-reserve-form{
     position: absolute;
     top:1.5rem; right:2.5rem;
@@ -255,3 +252,10 @@ section{
     color:var(--black);
     cursor: pointer;
 }
+
+
+
+
+
+
+

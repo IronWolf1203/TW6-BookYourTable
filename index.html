@@ -5,7 +5,7 @@
     <title>Book Your Table</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="manifest" href="manifest.json" crossorigin="anonymous">
+    <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="white"/>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
@@ -94,14 +94,20 @@
 
     <form action="">
         <h3>FORM DI PRENOTAZIONE!</h3>
-        <input type="text" name="Nome"  class="input" placeholder="Nome" required>
-        <input type="text" name="Cognome"  class="input" placeholder="Cognome" required>
+        <div>
+            <input type="text" name="Nome"  class="input" placeholder="Nome" required>
+            <input type="text" name="Cognome"  class="input" placeholder="Cognome" required>
+        </div>
+        <div>
+            <input type="number" name="Cell"  class="input" placeholder="Cell" required>
+            <input type="email" name="Email"  class="input" placeholder="Email" required>
+        </div>
         <input type="number" name="Persone"  class="input" placeholder="N° Persone" required>
-        <input type="number" name="Cell"  class="input" placeholder="Cell" required>
-        <input type="email" name="Email"  class="input" placeholder="Email" required>
         <input type="number" name="Tavolo"  class="input" placeholder="N° Tavolo scelto" required>
-        <input type="date" name="Data"  class="input" placeholder="Data prenotazione" required>
-        <input type="numer" name="Orario"  class="input" placeholder="Orario prenotazione" required>
+        <div>
+            <input type="date" name="Data"  class="input" placeholder="Data prenotazione" required>
+            <input type="numer" name="Orario"  class="input" placeholder="Orario prenotazione" required>
+        </div>
         <input type="file" name="Documento" class="btn" value="Allega Documento">
         <input type="submit" id="prenota" class="btn" value="Prenota"></input>
         <p>Riceverà via mail la disponibilità del tavolo con la conferma della prenotazione!</p>
