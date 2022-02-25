@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "short_name": "ByT",
   "lang": "en-US",
-  "start_url": "index.html",
+  "start_url": "templates/index.html",
   "display": "standalone",
   "background_color": "white",
   "theme_color": "white"

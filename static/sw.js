@@ -1,9 +1,9 @@
 let cacheName = 'ByT';
 
 let filesToCache = [
-    'index.html',
-    'css/style.css',
-    'js/main.js'
+    'templates/index.html',
+    'static/css/style.css',
+    'static/js/main.js'
 ];
 
 self.addEventListener('install', function(e) {
