@@ -1,21 +1,26 @@
-from flask import Flask, render_template, make_response, send_from_directory, request, redirect, json
+from flask import Flask, render_template, \
+    make_response, send_from_directory, request, redirect, json, jsonify
 
 app = Flask(__name__)
 
 
-@app.route('/')
-def index():
-    return render_template("index.html", title="Home", link="/form")
-
-
 @app.route('/test')
+def index():
+    return render_template("index_test.html", title="Home", link="/form")
+
+
+@app.route('/')
 def test():
-    return render_template("index_2.html", title="test")
+    return render_template("index.html", title="test")
 
 
-@app.route("/form")
+@app.route("/form", methods=['GET'])
 def form():
-    return render_template("form.html", title="Prenotazione")
+    table = request.args.get('table', " ")
+    size = request.args.get('size', " ")
+    reserv = {"Table": table, "Size": size}
+
+    return jsonify(reserv)#render_template("form.html", title="Prenotazione")
 
 
 """"@app.route('/form', methods=['POST'])
@@ -29,9 +34,9 @@ def reserveUp():
 
     # validate the received values
     if _name and _surname and _cell and _email and _person:
-        return redirect('/index.html')
+        return redirect('/index_test.html')
     else:
-        return json.dumps({'html': '<span>Enter the required fields</span>'})
+        return json.dumps({'html': '<span>Ente the required fields</span>'})
 """
 
 @app.route('/sw.js')

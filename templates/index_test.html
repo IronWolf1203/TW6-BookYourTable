@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <section class="sala" id="sala">
+        <h1 class="heading"> la nostra <span>sala</span> </h1>
+
+        <div class="table-container">
+            <div class="table">
+                <img src="../static/images/TABLE2.png" alt="">
+                <h3>Tavolo piccolo n.1</h3>
+                <p> min 1 max 3 pers.</p>
+                <a  class="btn" id="form-btn1" onclick=display_form("piccolo","1") href="{{ link }}" >prenota</a>
+            </div>
+            <div class="table">
+                <img src="../static/images/TABLE6.png" alt="">
+                <h3>Tavolo grande n.2 </h3>
+                <p>min 5 max 8 pers.</p>
+                <a href="/form" class="btn" id="form-btn2" onclick=display_form("grande","2")>prenota</a>
+            </div>
+            <div class="table">
+                <img src="../static/images/TABLE4.png" alt="">
+                <h3>Tavolo medio n.3</h3>
+                <p>min 3 max 5 pers</p>
+                <a class="btn" id="form-btn3" onclick=display_form("medio","3")>prenota</a>
+            </div>
+            <div class="table">
+                <img src="../static/images/TABLE4.png" alt="">
+                <h3>Tavolo medio n.4</h3>
+                <p>min 3 max 5 pers.</p>
+                <a class="btn" id="form-btn4" onclick=display_form("medio","4")>prenota</a>
+            </div>
+            <div class="table">
+                <img src="../static/images/TABLE2.png" alt="">
+                <h3>Tavolo piccolo n.5</h3>
+                <p>Lmin 1 max 3 pers.</p>
+                <a class="btn" id="form-btn5" onclick=display_form("piccolo","5")>prenota</a>
+            </div>
+            <div class="table">
+                <img src="../static/images/TABLE6.png" alt="">
+                <h3>Tavolo grande n.6</h3>
+                <p>min 5 max 8 pers.</p>
+                <a class="btn" id="form-btn6" onclick=display_form("grande","6")>prenota</a>
+            </div>
+
+        </div>
+    </section>
+{% endblock %}

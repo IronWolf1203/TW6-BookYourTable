@@ -1,7 +1,7 @@
 let cacheName = 'ByT';
 
 let filesToCache = [
-    'templates/index.html',
+    'templates/index_test.html',
     'static/css/style.css',
     'static/js/main.js'
 ];
