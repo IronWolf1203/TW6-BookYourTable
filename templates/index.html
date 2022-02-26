@@ -1,63 +1,21 @@
-<!DOCTYPE html>
-<html lang="it">
-<head>
-    <meta charset="UTF-8">
-    <title>Book Your Table</title>
+{% extends "base.html" %}
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="../static/manifest.json" rel="manifest" >
-    <meta name="theme-color" content="white"/>
-
-
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet" >
-    <link href="../static/css/style.css" rel="stylesheet" >
-
-
-</head>
-<body onload="test()">
-<!--<header class="header">
-
-    <a href="#" class="logo"> <i class="fas fa-utensils"></i> BookYourTable </a>
-
-    <nav class="navbar">
-        <a href="#home">home</a>
-        <a href="#reserved">reserved</a>
-    </nav>
-
-    <div class="icons">
-        <div class="fas fa-user" id="login-btn"></div>
-    </div>
-
-</header>
--->
-
-<section class="home" id="home">
-
-    <div class="content">
-
-        <h3><a href="#" class="logo"> <i class="fas fa-utensils"></i></a> Book<span>Your</span>Table</h3>
-        <p>Sistema innovativo di prenotazione per i ristoranti</p>
-    </div>
-
-</section>
-
-
-<section class="sala" id="sala">
-
-    <h1 class="heading"> la nostra <span>sala</span> </h1>
+{% block content %}
+    <section class="sala" id="sala">
+        <h1 class="heading"> la nostra <span>sala</span> </h1>
 
         <div class="table-container">
             <div class="table">
                 <img src="../static/images/TABLE2.png" alt="">
                 <h3>Tavolo piccolo n.1</h3>
                 <p> min 1 max 3 pers.</p>
-                <a tipe="button" class="btn" id="form-btn1" onclick=display_form("piccolo","1") >prenota</a>
+                <a  class="btn" id="form-btn1" onclick=display_form("piccolo","1") href="{{ link }}" >prenota</a>
             </div>
             <div class="table">
                 <img src="../static/images/TABLE6.png" alt="">
                 <h3>Tavolo grande n.2 </h3>
                 <p>min 5 max 8 pers.</p>
-                <a class="btn" id="form-btn2" onclick=display_form("grande","2")>prenota</a>
+                <a href="/form" class="btn" id="form-btn2" onclick=display_form("grande","2")>prenota</a>
             </div>
             <div class="table">
                 <img src="../static/images/TABLE4.png" alt="">
@@ -85,38 +43,5 @@
             </div>
 
         </div>
-
-</section>
-
-<!-- FORM DI PRENOTAZIONE -->
-<div class="reserve-form-container">
-
-    <span class="fas fa-times" id="close-reserve-form" onclick="remove()"></span>
-
-    <form action="">
-        <h3>FORM DI PRENOTAZIONE!</h3>
-        <div>
-            <input type="text" name="Nome"  class="input" placeholder="Nome" required>
-            <input type="text" name="Cognome"  class="input" placeholder="Cognome" required>
-        </div>
-        <div>
-            <input type="number" name="Cell"  class="input" placeholder="Cell" required>
-            <input type="email" name="Email"  class="input" placeholder="Email" required>
-        </div>
-        <input type="number" name="Persone"  class="input" placeholder="N° Persone" required>
-        <a id="value_table"></a>
-        <div>
-            <input type="date" name="Data"  class="input" placeholder="Data prenotazione" required>
-            <input type="numer" name="Orario"  class="input" placeholder="Orario prenotazione" required>
-        </div>
-        <input type="file" name="Documento" class="btn" value="Allega Documento">
-        <input type="submit" id="prenota" class="btn" value="Prenota"></input>
-        <p>Riceverà via mail la disponibilità del tavolo con la conferma della prenotazione!</p>
-    </form>
-</div>
-
-<script language="JavaScript" src="../static/js/main.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    </body>
-
-</html>
+    </section>
+{% endblock %}

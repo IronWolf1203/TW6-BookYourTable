@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="reserve-form-container">
+
+    <span class="fas fa-times" id="close-reserve-form" onclick="remove()"></span>
+
+    <form action="">
+        <h3>FORM DI PRENOTAZIONE!</h3>
+        <div>
+            <input type="text" name="Nome"  class="input" placeholder="Nome" required>
+            <input type="text" name="Cognome"  class="input" placeholder="Cognome" required>
+        </div>
+        <div>
+            <input type="number" name="Cell"  class="input" placeholder="Cell" required>
+            <input type="email" name="Email"  class="input" placeholder="Email" required>
+        </div>
+        <input type="number" name="Persone"  class="input" placeholder="N° Persone" required>
+        <a id="value_table"></a>
+        <div>
+            <input type="date" name="Data"  class="input" placeholder="Data prenotazione" required>
+            <input type="numer" name="Orario"  class="input" placeholder="Orario prenotazione" required>
+        </div>
+        <input type="file" name="Documento" class="btn" value="Allega Documento">
+        <input type="submit" id="prenota" class="btn" value="Prenota"></input>
+        <p>Riceverà via mail la disponibilità del tavolo con la conferma della prenotazione!</p>
+    </form>
+    </div>
+{% endblock %}
