@@ -1,17 +1,14 @@
-from flask import Flask, render_template, \
-    make_response, send_from_directory, request, redirect, json, jsonify
+from bson import ObjectId
+from flask import Flask, render_template, make_response, send_from_directory, request, redirect, jsonify
+from pymongo import MongoClient
+from datetime import datetime
 
 app = Flask(__name__)
 
 
-@app.route('/test')
-def index():
-    return render_template("index_test.html", title="Home", link="/form")
-
-
 @app.route('/')
 def test():
-    return render_template("index.html", title="test")
+    return render_template("index.html")
 
 
 @app.route("/form", methods=['GET'])
@@ -19,25 +16,65 @@ def form():
     table = request.args.get('table', " ")
     size = request.args.get('size', " ")
     reserv = {"Table": table, "Size": size}
+    return jsonify(reserv)
 
-    return jsonify(reserv)#render_template("form.html", title="Prenotazione")
+
+@app.route("/formdates", methods=['GET'])
+def list_posts():
+    # Crea un’istanza del client
+    client = MongoClient("mongodb://localhost:27017/")
+
+    # Accede ad un database (se non presente, allora è creato)
+    db = client["reserve"]
+
+    # Accedo ad una collezione (se non presente, allora è creata)
+    posts = db["posts"]
+
+    #items = posts.find({},{"_id":0})
+    items = posts.find()
+    post_list = []
+    for item in items:
+        item["_id"] = str(item["_id"])
+        post_list.append(item)
+
+    result = {"posts": post_list}
+    return jsonify(result)
 
 
-""""@app.route('/form', methods=['POST'])
-def reserveUp():
-    # read the posted values from the UI
-    _name = request.form['inputName']
-    _surname = request.form['inputName']
-    _cell = request.form['inputCell']
-    _email = request.form['inputEmail']
-    _person = request.form['inputPerson']
+@app.route("/formdate/<id>", methods=['GET'])
+def list_post_by_id(id):
+    # Crea un’istanza del client
+    client = MongoClient("mongodb://localhost:27017/")
 
-    # validate the received values
-    if _name and _surname and _cell and _email and _person:
-        return redirect('/index_test.html')
-    else:
-        return json.dumps({'html': '<span>Ente the required fields</span>'})
-"""
+    # Accede ad un database (se non presente, allora è creato)
+    db = client["reserve"]
+
+    # Accedo ad una collezione (se non presente, allora è creata)
+    posts = db["posts"]
+
+    item = posts.find_one({"_id": ObjectId(id)})
+    item["_id"] = str(item["_id"])
+    result = {"post": item}
+    return jsonify(result)
+
+
+@app.route("/formdate", methods=['POST'])
+def formdate():
+    # crea istanza client
+    client = MongoClient("mongodb://localhost:27017/")
+
+    # Accede ad un database e lo crea
+    db = client["reserve"]
+
+    # accedo a una collezione
+    posts = db["posts"]
+    post = {
+        "name": request.form.get('name', ''),
+        "surname": request.form.get('surname', ' ')
+    }
+    result = posts.insert_one(post)
+    return jsonify({"post": str(result.inserted_id)})
+
 
 @app.route('/sw.js')
 def sw():

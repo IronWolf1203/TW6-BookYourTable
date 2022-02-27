@@ -9,9 +9,6 @@ window.onload = () => { 'use strict';
                 console.log('ServiceWorker registration failed: ', err); });
     } }
 
-
-
-
 function display_form(table_size,table_num){
    $.ajax({
         type: 'GET',
@@ -22,13 +19,12 @@ function display_form(table_size,table_num){
         }, success: function (result){
             //console.log(result['Table'])
              $("#test").html("test "+result["Size"]+" "+result["Table"])
-        }
-    })
-
+            }
+        })
 
     console.log('tableValue: '+table_size+" n:"+table_num)
     let valueTable=document.getElementById("value_table")
-    valueTable.innerText="Tavolo N "+table_num+" "+table_size
+    valueTable.innerText= "Tavolo N "+table_num+" "+table_size
 
     document.querySelector('.reserve-form-container').classList.toggle('active');
 }
@@ -36,50 +32,17 @@ function display_form(table_size,table_num){
 function remove(){
     document.querySelector('.reserve-form-container').classList.remove('active');
 }
-/*
-$( document ).ready(function() {
 
+	function reserve() {
+    $.ajax({
+        url: "http://localhost:5000/formdate",
+        type: "POST",
+        data: {
+            name: $("#name").val(),
+            surname: $("#surname").val()
+        },
+        success: function( result ) {
+            $( "#result" ).html("<strong>" + result["post"] + "</strong>");
+        }
     });
-    $(function() {
-        $('prenota').click(function (){
-            $.ajax({
-                url: "/form",
-                data: $('form').serialize(),
-                type: "POST",
-                success: function (response) {
-                    console.log(response);
-                },
-                error: function (error) {
-                    console.log(error);
-                }
-            });
-
-        });
-
-    });*/
-
-/*
-document.querySelector('#form-btn1').onclick = () =>{
-    document.querySelector('.reserve-form-container').classList.toggle('active');
 }
-document.querySelector('#form-btn2').onclick = () =>{
-    document.querySelector('.reserve-form-container').classList.toggle('active');
-}
-document.querySelector('#form-btn3').onclick = () =>{
-    document.querySelector('.reserve-form-container').classList.toggle('active');
-}
-document.querySelector('#form-btn4').onclick = () =>{
-    document.querySelector('.reserve-form-container').classList.toggle('active');
-}
-document.querySelector('#form-btn5').onclick = () =>{
-    document.querySelector('.reserve-form-container').classList.toggle('active');
-}
-document.querySelector('#form-btn6').onclick = () =>{
-    document.querySelector('.reserve-form-container').classList.toggle('active');
-}
-
-document.querySelector('#close-reserve-form').onclick = () =>{
-    document.querySelector('.reserve-form-container').classList.remove('active');
-}
-
- */
