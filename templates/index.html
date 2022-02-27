@@ -2,7 +2,7 @@
 <html lang="it">
 <head>
     <meta charset="UTF-8">
-    <title>Book Your Table - {{ title }}</title>
+    <title>Book Your Table </title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="../static/manifest.json" rel="manifest" >
@@ -41,6 +41,7 @@
     </div>
 
 </section>
+{% block conferma %}
 
 <section class="sala" id="sala">
 
@@ -51,7 +52,7 @@
                 <img src="../static/images/TABLE2.png" alt="">
                 <h3>Tavolo piccolo n.1</h3>
                 <p> min 1 max 3 pers.</p>
-                <a tipe="button" class="btn" id="form-btn1" onclick=display_form("piccolo","1") >prenota</a>
+                <a class="btn" id="form-btn1" onclick=display_form("piccolo","1")>prenota</a>
             </div>
             <div class="table">
                 <img src="../static/images/TABLE6.png" alt="">
@@ -83,39 +84,43 @@
                 <p>min 5 max 8 pers.</p>
                 <a class="btn" id="form-btn6" onclick=display_form("grande","6")>prenota</a>
             </div>
-
         </div>
 
 </section>
+{% endblock %}
 
 <div class="reserve-form-container">
 
     <span class="fas fa-times" id="close-reserve-form" onclick="remove()"></span>
 
+
     <form action="">
+
         <h3>FORM DI PRENOTAZIONE!</h3>
         <div>
-            <input type="text" name="Nome"  class="input" placeholder="Nome" required>
-            <input type="text" name="Cognome"  class="input" placeholder="Cognome" required>
+            <input id="name" name="name" type="text" class="input" placeholder="Nome" required>
+            <input id="surname" name="surname" type="text" class="input" placeholder="Cognome" required>
         </div>
-        <div>
+ <!--      <div>
             <input type="number" name="Cell"  class="input" placeholder="Cell" required>
             <input type="email" name="Email"  class="input" placeholder="Email" required>
         </div>
         <input type="number" name="Persone"  class="input" placeholder="N° Persone" required>
+ -->
         <a id="value_table"></a>
-        <div>
+<!--        <div>
             <input type="date" name="Data"  class="input" placeholder="Data prenotazione" required>
             <input type="numer" name="Orario"  class="input" placeholder="Orario prenotazione" required>
         </div>
         <input type="file" name="Documento" class="btn" value="Allega Documento">
-        <input type="submit" id="prenota" class="btn" value="Prenota"></input>
+ -->
+        <input type="submit" id="prenota" class="btn" value="Prenota" onclick="reserve()" href="/conferma"></input>
         <p>Riceverà via mail la disponibilità del tavolo con la conferma della prenotazione!</p>
     </form>
-    <span id="test"></span>
-    </div>
 
+    </div>
 <script language="JavaScript" src="../static/js/main.js"></script>
+
     </body>
 
 </html>
