@@ -41,6 +41,7 @@
     </div>
 
 </section>
+{% block conferma %}
 
 <section class="sala" id="sala">
 
@@ -83,16 +84,18 @@
                 <p>min 5 max 8 pers.</p>
                 <a class="btn" id="form-btn6" onclick=display_form("grande","6")>prenota</a>
             </div>
-
         </div>
 
 </section>
+{% endblock %}
 
 <div class="reserve-form-container">
 
     <span class="fas fa-times" id="close-reserve-form" onclick="remove()"></span>
 
+
     <form action="">
+
         <h3>FORM DI PRENOTAZIONE!</h3>
         <div>
             <input id="name" name="name" type="text" class="input" placeholder="Nome" required>
@@ -111,11 +114,10 @@
         </div>
         <input type="file" name="Documento" class="btn" value="Allega Documento">
  -->
-        <input type="button" id="prenota" class="btn" value="Prenota" onclick="reserve()"></input>
+        <input type="submit" id="prenota" class="btn" value="Prenota" onclick="reserve()" href="/conferma"></input>
         <p>Riceverà via mail la disponibilità del tavolo con la conferma della prenotazione!</p>
     </form>
-    <span id="test"></span>
-    <span id="result"></span>
+
     </div>
 <script language="JavaScript" src="../static/js/main.js"></script>
 

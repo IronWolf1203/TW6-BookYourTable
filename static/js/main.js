@@ -42,7 +42,7 @@ function remove(){
             surname: $("#surname").val()
         },
         success: function( result ) {
-            $( "#result" ).html("<strong>" + result["post"] + "</strong>");
+            alert( "La tua prenotazione è stata effettuato con id " + result["post"] );
         }
     });
 }
